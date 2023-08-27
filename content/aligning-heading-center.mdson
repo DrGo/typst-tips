@@ -1,0 +1,24 @@
+ think the docs meant to align(center, block[ (or to have a 100% width block); as is, the block shrinks down to the size of the heading title, and aligning inside it doesn't change anything.
+
+
+I'm not entirely sure why the block was there in the first place. It could be a spacing thing, but regardless the block was not added in the right place.
+`
+#set page("a7")
+#set heading(numbering: "(I)")
+
+#show heading: it => {
+  set align(center)
+  set text(font: "Inria Serif", fallback: false)
+  [\~ #emph(it.body)  #counter(heading).display() \~]
+}
+
+= Dragon
+With a base health of 15, the
+dragon is the most powerful
+creature.
+
+= Manticore
+While less powerful than the
+dragon, the manticore gets
+extra style points.
+`
